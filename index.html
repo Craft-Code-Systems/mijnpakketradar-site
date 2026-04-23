@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- ===== Primary SEO ===== -->
+  <title>PakketRadar — Al je pakketten op één plek | Binnenkort beschikbaar</title>
+  <meta name="description" content="PakketRadar verzamelt track &amp; trace van PostNL, DHL, DPD en GLS in één helder overzicht. Pas bezorging aan voor álle carriers, krijg slimme meldingen via push of Telegram, privacy-first. Binnenkort beschikbaar — laat je e-mail achter voor vroege toegang."/>
+  <meta name="keywords" content="pakket volgen, track and trace, pakketten volgen, PostNL tracking, DHL tracking, DPD tracking, GLS tracking, multi-carrier, pakket tracker, bezorging aanpassen, bezorgmelding, ServicePoint, open source, Nederland"/>
+  <meta name="author" content="PakketRadar"/>
+  <meta name="robots" content="index, follow, max-image-preview:large"/>
+  <meta name="googlebot" content="index, follow"/>
+  <link rel="canonical" href="https://mijnpakketradar.nl/"/>
+
+  <!-- ===== Open Graph ===== -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="PakketRadar"/>
+  <meta property="og:locale" content="nl_NL"/>
+  <meta property="og:url" content="https://mijnpakketradar.nl/"/>
+  <meta property="og:title" content="PakketRadar — Al je pakketten op één plek"/>
+  <meta property="og:description" content="Eén helder overzicht voor PostNL-, DHL-, DPD- en GLS-zendingen. Pas bezorging aan zonder van app te wisselen. Meld je aan voor vroege toegang."/>
+  <meta property="og:image" content="https://mijnpakketradar.nl/og-image.png"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:image:alt" content="PakketRadar — Al je pakketten op één radar"/>
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="PakketRadar — Al je pakketten op één plek"/>
+  <meta name="twitter:description" content="Eén helder overzicht voor PostNL, DHL, DPD en GLS. Bezorging aanpassen voor alle carriers. Binnenkort beschikbaar."/>
+  <meta name="twitter:image" content="https://mijnpakketradar.nl/og-image.png"/>
+
+  <!-- ===== Theme & PWA ===== -->
+  <meta name="theme-color" content="#1E2A38"/>
+  <meta name="application-name" content="PakketRadar"/>
+  <meta name="apple-mobile-web-app-title" content="PakketRadar"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <link rel="manifest" href="/manifest.json"/>
+
+  <!-- ===== Favicons ===== -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Ccircle cx='18' cy='18' r='15' fill='none' stroke='%231E2A38' stroke-width='2'/%3E%3Ccircle cx='18' cy='18' r='9' fill='none' stroke='%231E2A38' stroke-width='1' stroke-dasharray='2 2.5' opacity='0.4'/%3E%3Cpath d='M18 18 L29 10' stroke='%231E2A38' stroke-width='2' stroke-linecap='round'/%3E%3Crect x='26' y='7' width='6' height='6' rx='1' fill='%233B82F6' stroke='%231E2A38' stroke-width='1'/%3E%3Ccircle cx='18' cy='18' r='1.5' fill='%231E2A38'/%3E%3C/svg%3E"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+
+  <!-- ===== Fonts (preconnect for speed) ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <!-- ===== Structured Data: Organization ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "PakketRadar",
+    "url": "https://mijnpakketradar.nl",
+    "logo": "https://mijnpakketradar.nl/logo.png",
+    "description": "Open-source multi-carrier pakketten-tracker voor Nederland. Volg al je zendingen van PostNL, DHL, DPD en GLS in één helder overzicht, en pas bezorging aan zonder van app te wisselen.",
+    "foundingDate": "2026",
+    "areaServed": {
+      "@type": "Country",
+      "name": "Nederland"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "hallo@mijnpakketradar.nl",
+      "contactType": "customer support",
+      "areaServed": "NL",
+      "availableLanguage": ["Dutch", "English"]
+    },
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Craft Code Systems",
+      "url": "https://ccsys.nl"
+    }
+  }
+  </script>
+
+  <!-- ===== Structured Data: WebSite ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "PakketRadar",
+    "url": "https://mijnpakketradar.nl",
+    "inLanguage": "nl-NL",
+    "description": "Al je pakketten op één plek. Multi-carrier tracking voor PostNL, DHL, DPD en GLS, met cross-carrier bezorgwijzigingen."
+  }
+  </script>
+
+  <!-- ===== Structured Data: SoftwareApplication ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "PakketRadar",
+    "operatingSystem": "Web, iOS, Android, Windows, macOS",
+    "applicationCategory": "UtilitiesApplication",
+    "description": "Open-source PWA die track &amp; trace van PostNL, DHL, DPD en GLS verzamelt in één overzicht. Pas bezorging aan voor alle carriers, ontvang meldingen via push of Telegram.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/PreOrder",
+      "availabilityStarts": "2026-11-01"
+    },
+    "inLanguage": "nl-NL",
+    "url": "https://mijnpakketradar.nl"
+  }
+  </script>
+
+  <!-- ===== Structured Data: FAQPage (mirrors visible DOM) ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Welke carriers ondersteunt PakketRadar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "PakketRadar ondersteunt de vier grootste carriers in Nederland: PostNL, DHL, DPD en GLS. Samen goed voor meer dan 95% van het Nederlandse pakketverkeer. Bij lancering starten we met PostNL en DHL; DPD en GLS volgen binnen enkele weken."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wat bedoelen jullie met 'bezorging aanpassen'?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Je kunt voor DHL-, PostNL- en DPD-zendingen het bezorgmoment wijzigen, laten afleveren bij een ServicePoint, of naar buren laten brengen — rechtstreeks vanuit PakketRadar, zonder van app te wisselen. Voor GLS verwijzen we door naar de aanpasfunctie van de carrier zelf, omdat zij geen externe modificatie-API aanbieden."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is PakketRadar gratis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. De consumenten-app is en blijft gratis, zonder advertenties en zonder doorverkoop van persoonsgegevens. Je hebt niet eens een account nodig — een losse tracking-code opzoeken kan anoniem."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Hoe verdienen jullie dan geld?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Uit geanonimiseerde, geaggregeerde bezorgstatistieken per postcode-gebied (PC4) die we verkopen aan webshops — denk aan 'hoe vaak levert carrier X in gebied 4021 de eerste keer succesvol af'. Er worden nooit individuele pakketten, adressen of persoonsgegevens gedeeld. Pas als een gebied minstens 50 pakketten heeft wordt er een datapunt vrijgegeven, met extra ruis erbovenop voor privacybescherming. Dit model heet 'Strava Metro': het gebruiksplatform is gratis, de geaggregeerde inzichten zijn het product."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wanneer wordt PakketRadar gelanceerd?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We mikken op lancering vóór Black Friday 2026 (eind november). We starten met 100 beta-gebruikers en rollen daarna in fases uit. Laat je e-mailadres achter om als eerste een uitnodiging te ontvangen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Heb ik een account nodig?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nee. Een losse tracking-code opzoeken kan zonder account, volledig anoniem. Wil je meerdere pakketten tegelijk volgen of pushmeldingen krijgen? Dan maak je een account aan met alleen je e-mailadres — geen wachtwoord. Inloggen gaat via een magic link in je mail."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wat gebeurt er met mijn e-mailadres?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We gebruiken je e-mailadres alleen om je bij lancering één keer te berichten. Geen nieuwsbrief, geen marketing, geen doorverkoop aan derden. Je kunt je altijd met één klik uitschrijven."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is mijn data veilig?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. We slaan zo min mogelijk op. Geen wachtwoorden, alleen magic-link authenticatie. Tracking-data wordt automatisch na 30 dagen verwijderd. Volledige adressen slaan we niet op — alleen het 4-cijferig postcode-gebied, en uitsluitend voor geanonimiseerde statistiek. PakketRadar is open-source, dus iedereen kan de code controleren."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is PakketRadar open source?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. De volledige broncode wordt gepubliceerd op GitHub onder een open-source licentie. Dat betekent: iedereen kan zien wat de app doet, bugs melden, features voorstellen, of zelf meebouwen. Transparantie is voor ons geen marketing-verhaal, maar een technische beslissing."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --pr-primary:        #1E2A38;
+      --pr-primary-hover:  #141D26;
+      --pr-accent:         #3B82F6;
+      --pr-accent-hover:   #2563EB;
+      --pr-accent-active:  #1D4ED8;
+      --pr-accent-bg:      #EFF6FF;
+      --pr-success:        #22C55E;
+      --pr-success-bg:     #DCFCE7;
+      --pr-success-text:   #166534;
+      --pr-warning:        #F59E0B;
+      --pr-warning-bg:     #FEF3C7;
+      --pr-warning-text:   #92400E;
+      --pr-error:          #EF4444;
+      --pr-error-bg:       #FEE2E2;
+      --pr-bg:             #F9FAFB;
+      --pr-card:           #FFFFFF;
+      --pr-border:         #E5E7EB;
+      --pr-border-subtle:  #F3F4F6;
+      --pr-text:           #111827;
+      --pr-text-muted:     #6B7280;
+      --pr-text-subtle:    #9CA3AF;
+      --pr-radius-sm: 8px;
+      --pr-radius-md: 12px;
+      --pr-radius-lg: 16px;
+      --pr-radius-xl: 20px;
+      --pr-shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.04);
+      --pr-shadow-md: 0 1px 3px rgba(16, 24, 40, 0.06), 0 1px 2px rgba(16, 24, 40, 0.04);
+      --pr-shadow-lg: 0 10px 25px -5px rgba(16, 24, 40, 0.08), 0 4px 10px -4px rgba(16, 24, 40, 0.05);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    html, body {
+      background: var(--pr-bg);
+      color: var(--pr-text);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .tnum { font-variant-numeric: tabular-nums; letter-spacing: 0.01em; }
+    a { color: inherit; text-decoration: none; }
+    img, svg { display: block; max-width: 100%; }
+
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ================ NAV ================ */
+    .nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(249, 250, 251, 0.88);
+      backdrop-filter: saturate(180%) blur(10px);
+      -webkit-backdrop-filter: saturate(180%) blur(10px);
+      border-bottom: 1px solid var(--pr-border-subtle);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--pr-primary);
+    }
+    .wordmark {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+    .wordmark em { font-style: normal; color: var(--pr-accent); }
+    .nav-links { display: flex; gap: 4px; }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--pr-text-muted);
+      padding: 8px 14px;
+      border-radius: var(--pr-radius-sm);
+      transition: color 0.12s, background 0.12s;
+    }
+    .nav-links a:hover { color: var(--pr-text); background: var(--pr-card); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 500;
+      border: none;
+      border-radius: var(--pr-radius-md);
+      cursor: pointer;
+      transition: background 0.15s, transform 0.08s, box-shadow 0.15s;
+      text-decoration: none;
+    }
+    .btn-primary {
+      height: 44px;
+      padding: 0 20px;
+      background: var(--pr-primary);
+      color: #fff;
+    }
+    .btn-primary:hover { background: var(--pr-primary-hover); }
+    .btn-primary:active { transform: translateY(1px); }
+    .btn-accent {
+      height: 44px;
+      padding: 0 22px;
+      background: var(--pr-accent);
+      color: #fff;
+    }
+    .btn-accent:hover { background: var(--pr-accent-hover); }
+    .btn-sm { height: 38px; padding: 0 16px; font-size: 13px; }
+
+    /* ================ HERO ================ */
+    .hero {
+      padding: 64px 0 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .hero-text { max-width: 560px; }
+    .coming-soon-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px 6px 10px;
+      background: var(--pr-accent-bg);
+      color: var(--pr-accent-active);
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 22px;
+    }
+    .live-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--pr-accent);
+      position: relative;
+    }
+    .live-dot::after {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      background: var(--pr-accent);
+      opacity: 0.3;
+      animation: ping 2s ease-out infinite;
+    }
+    @keyframes ping {
+      0% { transform: scale(0.6); opacity: 0.6; }
+      100% { transform: scale(2.5); opacity: 0; }
+    }
+
+    h1 {
+      font-size: clamp(34px, 5.2vw, 56px);
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      line-height: 1.02;
+      color: var(--pr-text);
+      margin-bottom: 20px;
+    }
+    h1 em { font-style: normal; color: var(--pr-accent); }
+
+    .hero-sub {
+      font-size: 18px;
+      line-height: 1.55;
+      color: var(--pr-text-muted);
+      margin-bottom: 32px;
+      max-width: 520px;
+    }
+
+    /* ================ EMAIL FORM ================ */
+    .email-form {
+      display: flex;
+      gap: 10px;
+      max-width: 460px;
+      margin-bottom: 14px;
+    }
+    .email-form.dark { max-width: 520px; }
+    .email-input-wrap { flex: 1; position: relative; }
+    .email-input-wrap::before {
+      content: '';
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%239CA3AF' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='4' width='12' height='10' rx='1.5'/%3E%3Cpath d='m2 5 6 4.5L14 5'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      pointer-events: none;
+    }
+    .email-input {
+      width: 100%;
+      height: 48px;
+      padding: 0 16px 0 42px;
+      border: 1px solid var(--pr-border);
+      border-radius: var(--pr-radius-md);
+      background: var(--pr-card);
+      font-family: inherit;
+      font-size: 15px;
+      color: var(--pr-text);
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .email-input::placeholder { color: var(--pr-text-subtle); }
+    .email-input:focus {
+      border-color: var(--pr-accent);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    }
+    .email-submit { height: 48px; font-size: 15px; padding: 0 22px; }
+    .honeypot {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .trust-line {
+      font-size: 13px;
+      color: var(--pr-text-subtle);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .trust-line svg { color: var(--pr-success); flex-shrink: 0; }
+
+    .form-success {
+      display: none;
+      background: var(--pr-success-bg);
+      border: 1px solid #BBF7D0;
+      color: var(--pr-success-text);
+      padding: 14px 16px;
+      border-radius: var(--pr-radius-md);
+      font-size: 14px;
+      max-width: 460px;
+    }
+    .form-success.show { display: flex; align-items: center; gap: 10px; }
+
+    /* ================ HERO VISUAL ================ */
+    .hero-visual {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      max-width: 520px;
+      margin-left: auto;
+    }
+    .hero-radar {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-radar svg { width: 100%; height: 100%; }
+    .radar-sweep {
+      transform-origin: center;
+      animation: sweep 5s linear infinite;
+    }
+    @keyframes sweep {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .floating-card {
+      position: absolute;
+      background: var(--pr-card);
+      border: 1px solid var(--pr-border);
+      border-radius: var(--pr-radius-md);
+      padding: 14px 16px;
+      box-shadow: var(--pr-shadow-lg);
+      width: 260px;
+      animation: floaty 6s ease-in-out infinite;
+    }
+    @keyframes floaty {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    .floating-card.fc-1 { top: 14%; left: -4%; animation-delay: 0s; }
+    .floating-card.fc-2 { bottom: 12%; right: -4%; width: 250px; animation-delay: 1.5s; }
+    .fc-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .fc-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .fc-body { flex: 1; min-width: 0; }
+    .fc-title { font-size: 13px; font-weight: 600; color: var(--pr-text); line-height: 1.25; }
+    .fc-meta { font-size: 11px; color: var(--pr-text-muted); }
+    .fc-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 8px 3px 7px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 500;
+    }
+    .fc-badge-dot { width: 5px; height: 5px; border-radius: 50%; }
+    .fc-badge.transit { background: var(--pr-accent-bg); color: var(--pr-accent-active); }
+    .fc-badge.transit .fc-badge-dot { background: var(--pr-accent); animation: pulse 1.8s ease-in-out infinite; }
+    .fc-badge.updated { background: var(--pr-success-bg); color: var(--pr-success-text); }
+    .fc-badge.updated .fc-badge-dot { background: var(--pr-success); }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    /* ================ SECTION PATTERNS ================ */
+    section.block { padding: 80px 0; }
+    .section-head {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 48px;
+    }
+    .section-label {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--pr-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 14px;
+    }
+    h2 {
+      font-size: clamp(26px, 3.5vw, 36px);
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+      color: var(--pr-text);
+      margin-bottom: 14px;
+    }
+    .section-sub {
+      font-size: 17px;
+      line-height: 1.55;
+      color: var(--pr-text-muted);
+    }
+
+    /* ================ HOW IT WORKS ================ */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .step-card {
+      background: var(--pr-card);
+      border: 1px solid var(--pr-border);
+      border-radius: var(--pr-radius-md);
+      padding: 28px;
+      box-shadow: var(--pr-shadow-sm);
+    }
+    .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--pr-accent-bg);
+      color: var(--pr-accent-active);
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+    .step-title {
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+      margin-bottom: 8px;
+    }
+    .step-desc {
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--pr-text-muted);
+    }
+
+    /* ================ FEATURES ================ */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .feature-card {
+      padding: 28px;
+      background: var(--pr-card);
+      border: 1px solid var(--pr-border);
+      border-radius: var(--pr-radius-md);
+      box-shadow: var(--pr-shadow-sm);
+      transition: border-color 0.15s, box-shadow 0.15s;
+      position: relative;
+    }
+    .feature-card:hover {
+      border-color: #D1D5DB;
+      box-shadow: var(--pr-shadow-md);
+    }
+    .feature-card.featured {
+      border: 2px solid var(--pr-accent);
+      background: linear-gradient(180deg, var(--pr-accent-bg) 0%, var(--pr-card) 55%);
+    }
+    .featured-badge {
+      position: absolute;
+      top: -10px;
+      left: 24px;
+      background: var(--pr-accent);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+    .feature-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--pr-radius-sm);
+      background: var(--pr-accent-bg);
+      color: var(--pr-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+    .feature-icon.success { background: var(--pr-success-bg); color: var(--pr-success); }
+    .feature-icon.warning { background: var(--pr-warning-bg); color: var(--pr-warning); }
+    .feature-icon.white { background: #fff; color: var(--pr-accent); }
+    .feature-title {
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+      margin-bottom: 6px;
+    }
+    .feature-desc {
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--pr-text-muted);
+    }
+
+    /* ================ INTEGRATIONS ================ */
+    .integrations { background: var(--pr-card); }
+    .integration-group {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+    .integration-group:last-child { margin-bottom: 0; }
+    .integration-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--pr-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 18px;
+    }
+    .integration-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+    .integration-chip {
+      padding: 10px 18px;
+      background: var(--pr-bg);
+      border: 1px solid var(--pr-border);
+      border-radius: var(--pr-radius-sm);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--pr-text);
+    }
+    .integration-chip.soon {
+      color: var(--pr-text-muted);
+      border-style: dashed;
+    }
+
+    /* ================ FAQ ================ */
+    .faq { max-width: 780px; margin: 0 auto; }
+    details.faq-item {
+      background: var(--pr-card);
+      border: 1px solid var(--pr-border);
+      border-radius: var(--pr-radius-md);
+      margin-bottom: 10px;
+      overflow: hidden;
+      transition: border-color 0.15s;
+    }
+    details.faq-item[open] { border-color: #D1D5DB; }
+    details.faq-item summary {
+      padding: 20px 24px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--pr-text);
+    }
+    details.faq-item summary::-webkit-details-marker { display: none; }
+    details.faq-item summary::after {
+      content: '';
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M10 4v12M4 10h12'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      transition: transform 0.2s;
+    }
+    details.faq-item[open] summary::after {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M4 10h12'/%3E%3C/svg%3E");
+    }
+    details.faq-item .faq-body {
+      padding: 0 24px 22px;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--pr-text-muted);
+    }
+
+    /* ================ DARK CTA ================ */
+    .cta-dark {
+      background: var(--pr-primary);
+      color: #fff;
+      border-radius: var(--pr-radius-lg);
+      padding: 64px 48px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      margin: 40px 0 64px;
+    }
+    .cta-dark-bg {
+      position: absolute;
+      right: -80px;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0.08;
+      pointer-events: none;
+    }
+    .cta-dark h2 { color: #fff; max-width: 520px; margin: 0 auto 14px; }
+    .cta-dark .section-sub { color: rgba(255, 255, 255, 0.7); max-width: 480px; margin: 0 auto 32px; }
+    .cta-dark .email-form { margin: 0 auto 14px; }
+    .cta-dark .email-input {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.16);
+      color: #fff;
+    }
+    .cta-dark .email-input::placeholder { color: rgba(255, 255, 255, 0.45); }
+    .cta-dark .email-input:focus {
+      border-color: var(--pr-accent);
+      background: rgba(255, 255, 255, 0.12);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+    }
+    .cta-dark .email-input-wrap::before {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='rgba(255,255,255,0.5)' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='4' width='12' height='10' rx='1.5'/%3E%3Cpath d='m2 5 6 4.5L14 5'/%3E%3C/svg%3E");
+    }
+    .cta-dark .trust-line { color: rgba(255, 255, 255, 0.55); justify-content: center; }
+    .cta-dark .form-success {
+      background: rgba(34, 197, 94, 0.15);
+      border-color: rgba(34, 197, 94, 0.3);
+      color: #86EFAC;
+      margin: 0 auto;
+    }
+
+    /* ================ FOOTER ================ */
+    footer.site-footer {
+      background: var(--pr-bg);
+      border-top: 1px solid var(--pr-border);
+      padding: 48px 0 32px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-brand { max-width: 320px; }
+    .footer-brand p {
+      font-size: 14px;
+      color: var(--pr-text-muted);
+      margin-top: 12px;
+      line-height: 1.55;
+    }
+    .footer-col h3 {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--pr-text);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 10px; }
+    .footer-col a {
+      font-size: 14px;
+      color: var(--pr-text-muted);
+      transition: color 0.12s;
+    }
+    .footer-col a:hover { color: var(--pr-text); }
+
+    .footer-bottom {
+      padding-top: 24px;
+      border-top: 1px solid var(--pr-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: var(--pr-text-subtle);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* ================ RESPONSIVE ================ */
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+      .hero-visual { max-width: 380px; margin: 0 auto; }
+      .steps, .features { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .footer-brand { grid-column: 1 / -1; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 560px) {
+      section.block { padding: 56px 0; }
+      .hero { padding: 40px 0 32px; }
+      .email-form { flex-direction: column; }
+      .email-submit { width: 100%; }
+      .cta-dark { padding: 44px 24px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .floating-card { width: 220px; }
+      .floating-card.fc-1 { left: 0; }
+      .floating-card.fc-2 { right: 0; width: 220px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+      html { scroll-behavior: auto; }
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--pr-accent);
+      outline-offset: 2px;
+    }
+    button:focus-visible, a:focus-visible { outline-offset: 3px; }
+    .email-input:focus-visible { outline: none; }
+  </style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position: absolute;">
+  <defs>
+    <symbol id="radar-logo" viewBox="0 0 36 36">
+      <circle cx="18" cy="18" r="15" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <circle cx="18" cy="18" r="9" fill="none" stroke="currentColor" stroke-width="0.8" stroke-dasharray="2 2.5" opacity="0.4"/>
+      <path d="M18 18 L29 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <rect x="26" y="7" width="6" height="6" rx="1" fill="#3B82F6" stroke="#1E2A38" stroke-width="1"/>
+      <circle cx="18" cy="18" r="1.5" fill="currentColor"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ============ NAV ============ -->
+<div class="nav-wrap">
+  <div class="container">
+    <nav class="nav" aria-label="Hoofdnavigatie">
+      <a href="#" class="brand" aria-label="PakketRadar — terug naar bovenkant">
+        <svg width="32" height="32" aria-hidden="true"><use href="#radar-logo"/></svg>
+        <span class="wordmark">Pakket<em>radar</em></span>
+      </a>
+      <div class="nav-links">
+        <a href="#hoe-het-werkt">Hoe het werkt</a>
+        <a href="#features">Features</a>
+        <a href="#carriers">Carriers</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <a href="#aanmelden" class="btn btn-primary btn-sm">Meld me aan</a>
+    </nav>
+  </div>
+</div>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="container">
+    <div class="hero-grid">
+
+      <div class="hero-text">
+        <div class="coming-soon-badge" role="status">
+          <span class="live-dot" aria-hidden="true"></span>
+          Binnenkort beschikbaar · Black Friday 2026
+        </div>
+
+        <h1 id="hero-title">Al je pakketten, op <em>één radar</em>.</h1>
+
+        <p class="hero-sub">
+          PakketRadar verzamelt track &amp; trace van PostNL, DHL, DPD en GLS in één helder
+          overzicht — en je past er bezorging aan voor álle carriers tegelijk. Geen gedoe met
+          meerdere apps. Open source, privacy-first, geen advertenties.
+        </p>
+
+        <form class="email-form" id="waitlist-form-hero" action="/api/waitlist" method="POST" novalidate>
+          <div class="email-input-wrap">
+            <label for="email-hero" class="honeypot">E-mailadres</label>
+            <input
+              type="email"
+              id="email-hero"
+              name="email"
+              class="email-input"
+              placeholder="jij@voorbeeld.nl"
+              required
+              autocomplete="email"
+              aria-label="E-mailadres voor vroege toegang"
+            />
+          </div>
+          <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true"/>
+          <button type="submit" class="btn btn-primary email-submit">
+            Houd me op de hoogte
+          </button>
+        </form>
+
+        <p class="trust-line">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="3 8 6.5 11.5 13 5"/>
+          </svg>
+          Geen spam. Eén bericht bij lancering. Uitschrijven met één klik.
+        </p>
+
+        <div class="form-success" id="success-hero" role="status" aria-live="polite">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="4 10 8.5 14.5 16 6"/>
+          </svg>
+          <span>Gelukt! We sturen je een bericht zodra we live gaan.</span>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-radar">
+          <svg viewBox="0 0 500 500">
+            <circle cx="250" cy="250" r="230" fill="none" stroke="#1E2A38" stroke-width="1" opacity="0.12"/>
+            <circle cx="250" cy="250" r="170" fill="none" stroke="#1E2A38" stroke-width="1" opacity="0.14"/>
+            <circle cx="250" cy="250" r="110" fill="none" stroke="#1E2A38" stroke-width="1" opacity="0.16"/>
+            <circle cx="250" cy="250" r="55"  fill="none" stroke="#1E2A38" stroke-width="1" opacity="0.2"/>
+            <line x1="20" y1="250" x2="480" y2="250" stroke="#1E2A38" stroke-width="1" opacity="0.08"/>
+            <line x1="250" y1="20" x2="250" y2="480" stroke="#1E2A38" stroke-width="1" opacity="0.08"/>
+
+            <g class="radar-sweep" style="transform-origin: 250px 250px;">
+              <defs>
+                <linearGradient id="sweepGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#3B82F6" stop-opacity="0"/>
+                  <stop offset="100%" stop-color="#3B82F6" stop-opacity="0.35"/>
+                </linearGradient>
+              </defs>
+              <path d="M 250 250 L 250 20 A 230 230 0 0 1 480 250 Z" fill="url(#sweepGrad)"/>
+              <line x1="250" y1="250" x2="250" y2="20" stroke="#3B82F6" stroke-width="2"/>
+            </g>
+
+            <circle cx="250" cy="250" r="3" fill="#1E2A38"/>
+            <rect x="366" y="132" width="10" height="10" rx="1.5" fill="#3B82F6" stroke="#1E2A38" stroke-width="1.5"/>
+            <rect x="148" y="320" width="8" height="8" rx="1" fill="none" stroke="#1E2A38" stroke-width="1.2" opacity="0.5"/>
+            <rect x="320" y="380" width="8" height="8" rx="1" fill="none" stroke="#1E2A38" stroke-width="1.2" opacity="0.5"/>
+            <rect x="98" y="180" width="7" height="7" rx="1" fill="#22C55E" opacity="0.75"/>
+          </svg>
+        </div>
+
+        <!-- Floating card 1: tracking update -->
+        <div class="floating-card fc-1">
+          <div class="fc-head">
+            <div class="fc-icon" style="background:#EFF6FF;color:#1D4ED8;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+                <path d="m3.3 7 8.7 5 8.7-5"/>
+              </svg>
+            </div>
+            <div class="fc-body">
+              <div class="fc-title">Onderweg naar sorteercentrum</div>
+              <div class="fc-meta tnum">PostNL · 3SYZXJ0123456789</div>
+            </div>
+          </div>
+          <span class="fc-badge transit">
+            <span class="fc-badge-dot"></span>
+            Live update · net binnen
+          </span>
+        </div>
+
+        <!-- Floating card 2: intervention (the killer feature) -->
+        <div class="floating-card fc-2">
+          <div class="fc-head">
+            <div class="fc-icon" style="background:#DCFCE7;color:#166534;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="4 11 9 16 20 5"/>
+              </svg>
+            </div>
+            <div class="fc-body">
+              <div class="fc-title">Bezorging aangepast</div>
+              <div class="fc-meta">DHL-pakket → naar buren nr. 14</div>
+            </div>
+          </div>
+          <span class="fc-badge updated">
+            <span class="fc-badge-dot"></span>
+            Succes · in één tap
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section id="hoe-het-werkt" class="block" aria-labelledby="how-title">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">Zo werkt het</span>
+      <h2 id="how-title">Van losse tracking-codes naar één overzicht.</h2>
+      <p class="section-sub">
+        Drie stappen, geen accountverplichting, geen apps downloaden. Werkt in elke browser.
+      </p>
+    </div>
+
+    <div class="steps">
+      <article class="step-card">
+        <div class="step-num">1</div>
+        <h3 class="step-title">Voer een tracking-code in</h3>
+        <p class="step-desc">
+          Plak je tracking-code op de website of stuur 'm naar onze Telegram-bot.
+          PakketRadar herkent automatisch of het PostNL, DHL, DPD of GLS is.
+        </p>
+      </article>
+
+      <article class="step-card">
+        <div class="step-num">2</div>
+        <h3 class="step-title">Wij houden het in de gaten</h3>
+        <p class="step-desc">
+          We pollen slim bij elke carrier, zodat je altijd de actuele status hebt zonder te
+          refreshen. Updates komen binnen zodra ze bij de carrier bekend zijn.
+        </p>
+      </article>
+
+      <article class="step-card">
+        <div class="step-num">3</div>
+        <h3 class="step-title">Meld én pas aan</h3>
+        <p class="step-desc">
+          Push-meldingen of Telegram-berichten op het juiste moment. En als je bezorgmoment
+          niet uitkomt? Pas het direct aan — voor elke ondersteunde carrier, op één plek.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section id="features" class="block" style="background: var(--pr-card); border-top: 1px solid var(--pr-border); border-bottom: 1px solid var(--pr-border);" aria-labelledby="features-title">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">Features</span>
+      <h2 id="features-title">Wat PakketRadar anders maakt.</h2>
+      <p class="section-sub">
+        De enige tracker in Nederland die multi-carrier tracking combineert met
+        cross-carrier bezorgwijzigingen.
+      </p>
+    </div>
+
+    <div class="features">
+
+      <article class="feature-card featured">
+        <span class="featured-badge">Uniek in Nederland</span>
+        <div class="feature-icon white">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10"/>
+            <path d="M3 10h18"/>
+            <path d="M16 19l2 2 4-4"/>
+          </svg>
+        </div>
+        <h3 class="feature-title">Bezorging aanpassen voor alle carriers</h3>
+        <p class="feature-desc">
+          Tijdslot wijzigen, naar een ServicePoint laten bezorgen, of naar de buren —
+          rechtstreeks in PakketRadar. Geen heen-en-weer gespring tussen PostNL-, DHL- en
+          DPD-apps.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+            <path d="m3.3 7 8.7 5 8.7-5"/>
+            <path d="M12 22V12"/>
+          </svg>
+        </div>
+        <h3 class="feature-title">Vier carriers in één overzicht</h3>
+        <p class="feature-desc">
+          PostNL, DHL, DPD en GLS — samen goed voor meer dan 95% van het Nederlandse
+          pakketverkeer. Carrier wordt automatisch herkend aan de tracking-code.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon warning">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>
+            <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
+          </svg>
+        </div>
+        <h3 class="feature-title">Meldingen via push of Telegram</h3>
+        <p class="feature-desc">
+          Kies zelf hoe: web-push in je browser of een bericht op Telegram. Binnen 30
+          minuten na elke statuswijziging. Geen meldingen over niets.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon success">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </div>
+        <h3 class="feature-title">Privacy als uitgangspunt</h3>
+        <p class="feature-desc">
+          Magic-link login, geen wachtwoorden. Tracking-data automatisch verwijderd na 30
+          dagen. Anonieme lookup zonder account. Geen advertenties, geen tracking-pixels.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="5" y="2" width="14" height="20" rx="2"/>
+            <line x1="12" y1="18" x2="12.01" y2="18"/>
+          </svg>
+        </div>
+        <h3 class="feature-title">Installeerbaar als app</h3>
+        <p class="feature-desc">
+          PakketRadar is een Progressive Web App — installeerbaar op iOS, Android, Windows en
+          macOS. Overal dezelfde ervaring, zonder gedoe met app-stores.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+          </svg>
+        </div>
+        <h3 class="feature-title">Volledig open source</h3>
+        <p class="feature-desc">
+          De code staat publiek op GitHub. Iedereen kan controleren wat de app écht doet,
+          bugs melden of zelf meebouwen. Transparantie, niet als marketingverhaal.
+        </p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ CARRIERS & NOTIFICATIONS ============ -->
+<section id="carriers" class="block integrations" aria-labelledby="car-title">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">Carriers &amp; kanalen</span>
+      <h2 id="car-title">Werkt met de vier grootste carriers in Nederland.</h2>
+      <p class="section-sub">
+        Samen dekken ze meer dan 95% van het Nederlandse pakketverkeer af. Bij lancering
+        starten we met de twee grootste en rollen we de rest snel daarna uit.
+      </p>
+    </div>
+
+    <div class="integration-group">
+      <div class="integration-label">Carriers bij MVP-lancering</div>
+      <div class="integration-row">
+        <span class="integration-chip">PostNL</span>
+        <span class="integration-chip">DHL</span>
+      </div>
+    </div>
+
+    <div class="integration-group">
+      <div class="integration-label">Carriers kort na lancering</div>
+      <div class="integration-row">
+        <span class="integration-chip soon">DPD · volgt snel</span>
+        <span class="integration-chip soon">GLS · volgt snel</span>
+      </div>
+    </div>
+
+    <div class="integration-group">
+      <div class="integration-label">Meldingen via</div>
+      <div class="integration-row">
+        <span class="integration-chip">Web Push (browser)</span>
+        <span class="integration-chip">Telegram-bot</span>
+        <span class="integration-chip soon">WhatsApp · later</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" class="block" aria-labelledby="faq-title">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">FAQ</span>
+      <h2 id="faq-title">Veelgestelde vragen</h2>
+    </div>
+
+    <div class="faq">
+      <details class="faq-item">
+        <summary>Welke carriers ondersteunt PakketRadar?</summary>
+        <div class="faq-body">
+          PakketRadar ondersteunt de vier grootste carriers in Nederland: PostNL, DHL, DPD en
+          GLS. Samen goed voor meer dan 95% van het Nederlandse pakketverkeer. Bij lancering
+          starten we met PostNL en DHL; DPD en GLS volgen binnen enkele weken.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Wat bedoelen jullie met 'bezorging aanpassen'?</summary>
+        <div class="faq-body">
+          Je kunt voor DHL-, PostNL- en DPD-zendingen het bezorgmoment wijzigen, laten
+          afleveren bij een ServicePoint, of naar buren laten brengen — rechtstreeks vanuit
+          PakketRadar, zonder van app te wisselen. Voor GLS verwijzen we door naar de
+          aanpasfunctie van de carrier zelf, omdat zij geen externe modificatie-API
+          aanbieden.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Is PakketRadar gratis?</summary>
+        <div class="faq-body">
+          Ja. De consumenten-app is en blijft gratis, zonder advertenties en zonder
+          doorverkoop van persoonsgegevens. Je hebt niet eens een account nodig — een losse
+          tracking-code opzoeken kan anoniem.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Hoe verdienen jullie dan geld?</summary>
+        <div class="faq-body">
+          Uit geanonimiseerde, geaggregeerde bezorgstatistieken per postcode-gebied (PC4)
+          die we verkopen aan webshops — denk aan "hoe vaak levert carrier X in gebied 4021
+          de eerste keer succesvol af". Er worden nooit individuele pakketten, adressen of
+          persoonsgegevens gedeeld. Pas als een gebied minstens 50 pakketten heeft wordt er
+          een datapunt vrijgegeven, met extra ruis erbovenop voor privacybescherming. Dit
+          model heet "Strava Metro": het gebruiksplatform is gratis, de geaggregeerde
+          inzichten zijn het product.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Wanneer wordt PakketRadar gelanceerd?</summary>
+        <div class="faq-body">
+          We mikken op lancering vóór Black Friday 2026 (eind november). We starten met 100
+          beta-gebruikers en rollen daarna in fases uit. Laat je e-mailadres achter om als
+          eerste een uitnodiging te ontvangen.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Heb ik een account nodig?</summary>
+        <div class="faq-body">
+          Nee. Een losse tracking-code opzoeken kan zonder account, volledig anoniem. Wil je
+          meerdere pakketten tegelijk volgen of pushmeldingen krijgen? Dan maak je een
+          account aan met alleen je e-mailadres — geen wachtwoord. Inloggen gaat via een
+          magic link in je mail.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Wat gebeurt er met mijn e-mailadres?</summary>
+        <div class="faq-body">
+          We gebruiken je e-mailadres alleen om je bij lancering één keer te berichten. Geen
+          nieuwsbrief, geen marketing, geen doorverkoop aan derden. Je kunt je altijd met
+          één klik uitschrijven.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Is mijn data veilig?</summary>
+        <div class="faq-body">
+          Ja. We slaan zo min mogelijk op. Geen wachtwoorden, alleen magic-link
+          authenticatie. Tracking-data wordt automatisch na 30 dagen verwijderd. Volledige
+          adressen slaan we niet op — alleen het 4-cijferig postcode-gebied, en uitsluitend
+          voor geanonimiseerde statistiek. PakketRadar is open-source, dus iedereen kan de
+          code controleren.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Is PakketRadar open source?</summary>
+        <div class="faq-body">
+          Ja. De volledige broncode wordt gepubliceerd op GitHub onder een open-source
+          licentie. Dat betekent: iedereen kan zien wat de app doet, bugs melden, features
+          voorstellen, of zelf meebouwen. Transparantie is voor ons geen marketing-verhaal,
+          maar een technische beslissing.
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL DARK CTA ============ -->
+<section id="aanmelden" aria-labelledby="cta-title">
+  <div class="container">
+    <div class="cta-dark">
+      <div class="cta-dark-bg">
+        <svg width="420" height="420" viewBox="0 0 420 420" aria-hidden="true">
+          <circle cx="210" cy="210" r="200" fill="none" stroke="#fff" stroke-width="1"/>
+          <circle cx="210" cy="210" r="140" fill="none" stroke="#fff" stroke-width="1"/>
+          <circle cx="210" cy="210" r="80"  fill="none" stroke="#fff" stroke-width="1"/>
+        </svg>
+      </div>
+
+      <span class="section-label" style="color: #60A5FA;">Meld je aan</span>
+      <h2 id="cta-title">Word als eerste op de hoogte.</h2>
+      <p class="section-sub">
+        Laat je e-mail achter en we sturen je één bericht zodra PakketRadar live gaat.
+        Geen spam. Geen nieuwsbrief. Belofte.
+      </p>
+
+      <form class="email-form dark" id="waitlist-form-cta" action="/api/waitlist" method="POST" novalidate>
+        <div class="email-input-wrap">
+          <label for="email-cta" class="honeypot">E-mailadres</label>
+          <input
+            type="email"
+            id="email-cta"
+            name="email"
+            class="email-input"
+            placeholder="jij@voorbeeld.nl"
+            required
+            autocomplete="email"
+            aria-label="E-mailadres voor vroege toegang"
+          />
+        </div>
+        <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true"/>
+        <button type="submit" class="btn btn-accent email-submit">Houd me op de hoogte</button>
+      </form>
+
+      <p class="trust-line" style="justify-content: center;">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="3 8 6.5 11.5 13 5"/>
+        </svg>
+        Geen spam. Eén bericht bij lancering. Uitschrijven met één klik.
+      </p>
+
+      <div class="form-success" id="success-cta" role="status" aria-live="polite">
+        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="4 10 8.5 14.5 16 6"/>
+        </svg>
+        <span>Gelukt! We sturen je een bericht zodra we live gaan.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand">
+          <svg width="30" height="30" aria-hidden="true"><use href="#radar-logo"/></svg>
+          <span class="wordmark">Pakket<em>radar</em></span>
+        </div>
+        <p>Open-source multi-carrier tracking voor Nederland. Eén overzicht voor al je pakketten, met bezorgwijzigingen voor alle carriers. Een project van Craft Code Systems.</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Product</h3>
+        <ul>
+          <li><a href="#hoe-het-werkt">Hoe het werkt</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#carriers">Carriers</a></li>
+          <li><a href="#aanmelden">Vroege toegang</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Bedrijf</h3>
+        <ul>
+          <li><a href="https://ccsys.nl" rel="noopener">Craft Code Systems</a></li>
+          <li><a href="/over">Over PakketRadar</a></li>
+          <li><a href="https://github.com/Craft-Code-Systems/PakketRadar" rel="noopener">GitHub</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Juridisch</h3>
+        <ul>
+          <li><a href="/privacy">Privacybeleid</a></li>
+          <li><a href="/voorwaarden">Voorwaarden</a></li>
+          <li><a href="/cookies">Cookiebeleid</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 Craft Code Systems. Alle rechten voorbehouden.</div>
+      <div>Open source · Gemaakt in Nederland 🇳🇱</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    const forms = document.querySelectorAll('form.email-form');
+
+    forms.forEach(function (form) {
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const email = form.querySelector('input[type="email"]').value.trim();
+        const honeypot = form.querySelector('input[name="website"]').value;
+        const btn = form.querySelector('button[type="submit"]');
+        const successEl = form.parentNode.querySelector('.form-success');
+
+        if (honeypot) return; // silent spam discard
+
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          const input = form.querySelector('input[type="email"]');
+          input.focus();
+          input.style.borderColor = 'var(--pr-error)';
+          setTimeout(function () { input.style.borderColor = ''; }, 2500);
+          return;
+        }
+
+        const originalText = btn.textContent;
+        btn.textContent = 'Bezig...';
+        btn.disabled = true;
+
+        try {
+          await new Promise(function (resolve) { return setTimeout(resolve, 700); });
+
+          // Uncomment when backend is live:
+          // const res = await fetch(form.action, {
+          //   method: 'POST',
+          //   headers: { 'Content-Type': 'application/json' },
+          //   body: JSON.stringify({ email: email })
+          // });
+          // if (!res.ok) throw new Error('Netwerkfout');
+
+          form.style.display = 'none';
+          if (successEl) successEl.classList.add('show');
+        } catch (err) {
+          btn.textContent = originalText;
+          btn.disabled = false;
+          alert('Er ging iets mis. Probeer het over een moment opnieuw.');
+        }
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
