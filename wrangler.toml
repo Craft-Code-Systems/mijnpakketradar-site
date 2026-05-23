@@ -1,0 +1,11 @@
+name = "pakketradar"
+compatibility_date = "2026-04-01"
+pages_build_output_dir = "./public"
+
+# D1 database binding — stores waitlist signups.
+# Replace `database_id` with the ID you get from:
+#   wrangler d1 create pakketradar-waitlist
+[[d1_databases]]
+binding = "DB"
+database_name = "pakketradar-waitlist"
+database_id = "5e98a939-95b3-4085-bb0d-09b76db5bd5d"

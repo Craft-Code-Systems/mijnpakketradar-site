@@ -41,9 +41,9 @@
 
   <!-- ===== Favicons ===== -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Ccircle cx='18' cy='18' r='15' fill='none' stroke='%231E2A38' stroke-width='2'/%3E%3Ccircle cx='18' cy='18' r='9' fill='none' stroke='%231E2A38' stroke-width='1' stroke-dasharray='2 2.5' opacity='0.4'/%3E%3Cpath d='M18 18 L29 10' stroke='%231E2A38' stroke-width='2' stroke-linecap='round'/%3E%3Crect x='26' y='7' width='6' height='6' rx='1' fill='%233B82F6' stroke='%231E2A38' stroke-width='1'/%3E%3Ccircle cx='18' cy='18' r='1.5' fill='%231E2A38'/%3E%3C/svg%3E"/>
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+  <!-- <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/> -->
 
   <!-- ===== Fonts (preconnect for speed) ===== -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -1422,53 +1422,82 @@
 </footer>
 
 <script>
-  (function () {
-    const forms = document.querySelectorAll('form.email-form');
-
-    forms.forEach(function (form) {
-      form.addEventListener('submit', async function (e) {
-        e.preventDefault();
-
-        const email = form.querySelector('input[type="email"]').value.trim();
-        const honeypot = form.querySelector('input[name="website"]').value;
-        const btn = form.querySelector('button[type="submit"]');
-        const successEl = form.parentNode.querySelector('.form-success');
-
-        if (honeypot) return; // silent spam discard
-
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-          const input = form.querySelector('input[type="email"]');
-          input.focus();
-          input.style.borderColor = 'var(--pr-error)';
-          setTimeout(function () { input.style.borderColor = ''; }, 2500);
-          return;
-        }
-
-        const originalText = btn.textContent;
-        btn.textContent = 'Bezig...';
-        btn.disabled = true;
-
-        try {
-          await new Promise(function (resolve) { return setTimeout(resolve, 700); });
-
-          // Uncomment when backend is live:
-          // const res = await fetch(form.action, {
-          //   method: 'POST',
-          //   headers: { 'Content-Type': 'application/json' },
-          //   body: JSON.stringify({ email: email })
-          // });
-          // if (!res.ok) throw new Error('Netwerkfout');
-
+(function () {
+  const forms = document.querySelectorAll('form.email-form');
+ 
+  forms.forEach(function (form) {
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+ 
+      const emailInput = form.querySelector('input[type="email"]');
+      const email = emailInput.value.trim();
+      const honeypot = form.querySelector('input[name="website"]').value;
+      const btn = form.querySelector('button[type="submit"]');
+      const successEl = form.parentNode.querySelector('.form-success');
+ 
+      // Silent spam discard (but still show success so bots don't learn)
+      if (honeypot) {
+        form.style.display = 'none';
+        if (successEl) successEl.classList.add('show');
+        return;
+      }
+ 
+      // Client-side sanity check
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+        emailInput.focus();
+        emailInput.style.borderColor = 'var(--pr-error)';
+        setTimeout(function () { emailInput.style.borderColor = ''; }, 2500);
+        return;
+      }
+ 
+      const originalText = btn.textContent;
+      btn.textContent = 'Bezig...';
+      btn.disabled = true;
+ 
+      try {
+        const res = await fetch('/api/waitlist', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email: email,
+            website: '' // honeypot passthrough (always empty for real humans)
+          })
+        });
+ 
+        const data = await res.json().catch(function () { return {}; });
+ 
+        if (res.ok) {
           form.style.display = 'none';
-          if (successEl) successEl.classList.add('show');
-        } catch (err) {
+          if (successEl) {
+            // Optional: personalize the success message from the server
+            const msgSpan = successEl.querySelector('span');
+            if (msgSpan && data.message) msgSpan.textContent = data.message;
+            successEl.classList.add('show');
+          }
+        } else if (res.status === 429) {
+          // Rate limited
+          alert(data.error || 'Even geduld — probeer over een minuut opnieuw.');
           btn.textContent = originalText;
           btn.disabled = false;
-          alert('Er ging iets mis. Probeer het over een moment opnieuw.');
+        } else if (res.status === 400) {
+          // Invalid email
+          emailInput.focus();
+          emailInput.style.borderColor = 'var(--pr-error)';
+          setTimeout(function () { emailInput.style.borderColor = ''; }, 2500);
+          btn.textContent = originalText;
+          btn.disabled = false;
+        } else {
+          throw new Error(data.error || 'Unknown error');
         }
-      });
+      } catch (err) {
+        console.error('Waitlist submit failed:', err);
+        alert('Er ging iets mis. Probeer het over een moment opnieuw.');
+        btn.textContent = originalText;
+        btn.disabled = false;
+      }
     });
-  })();
+  });
+})();
 </script>
 
 </body>

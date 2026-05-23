@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 70">
+  <!-- Radar mark -->
+  <g transform="translate(8, 13)">
+    <circle cx="22" cy="22" r="19" fill="none" stroke="#1E2A38" stroke-width="2.2"/>
+    <circle cx="22" cy="22" r="11.5" fill="none" stroke="#1E2A38" stroke-width="1.2" stroke-dasharray="2.5 3" opacity="0.4"/>
+    <path d="M22 22 L36 11" stroke="#1E2A38" stroke-width="2.2" stroke-linecap="round"/>
+    <rect x="32" y="7" width="8" height="8" rx="1.2" fill="#3B82F6" stroke="#1E2A38" stroke-width="1.2"/>
+    <circle cx="22" cy="22" r="2" fill="#1E2A38"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="68" y="45"
+        font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif"
+        font-size="30"
+        font-weight="600"
+        letter-spacing="-0.8"
+        fill="#1E2A38">Pakket<tspan fill="#3B82F6">radar</tspan></text>
+</svg>

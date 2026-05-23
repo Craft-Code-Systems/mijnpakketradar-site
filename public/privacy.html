@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacybeleid — PakketRadar</title>
+  <meta name="description" content="Hoe PakketRadar omgaat met persoonsgegevens. Privacy-first, AVG-compliant, zo min mogelijk opgeslagen."/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://mijnpakketradar.nl/privacy"/>
+  <meta name="theme-color" content="#1E2A38"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/legal.css"/>
+</head>
+<body>
+
+<header class="legal-header">
+  <div class="legal-container">
+    <a href="/" class="brand">
+      <svg width="28" height="28" viewBox="0 0 36 36" aria-hidden="true">
+        <circle cx="18" cy="18" r="15" fill="none" stroke="#1E2A38" stroke-width="1.8"/>
+        <circle cx="18" cy="18" r="9" fill="none" stroke="#1E2A38" stroke-width="1" stroke-dasharray="2 2.5" opacity="0.4"/>
+        <path d="M18 18 L29 10" stroke="#1E2A38" stroke-width="1.8" stroke-linecap="round"/>
+        <rect x="26" y="7" width="6" height="6" rx="1" fill="#3B82F6" stroke="#1E2A38" stroke-width="1"/>
+        <circle cx="18" cy="18" r="1.6" fill="#1E2A38"/>
+      </svg>
+      <span>Pakket<em>radar</em></span>
+    </a>
+    <a href="/" class="back-link">← Terug naar home</a>
+  </div>
+</header>
+
+<main class="legal-container legal-content">
+
+  <h1>Privacybeleid</h1>
+  <p class="meta">Versie 1.0 · Laatst gewijzigd: 19 april 2026</p>
+
+  <p class="lead">
+    PakketRadar is een open-source dienst van Craft Code Systems. We geloven dat je zo
+    min mogelijk van jouw data zou moeten prijsgeven om je pakketten te volgen. Dit
+    beleid legt in gewone taal uit welke gegevens we wel verzamelen, waarom, en hoe lang
+    we ze bewaren.
+  </p>
+
+  <h2>1. Wie we zijn</h2>
+  <p>
+    De verantwoordelijke voor de verwerking van jouw persoonsgegevens is:
+  </p>
+  <address>
+    <strong>Craft Code Systems</strong><br/>
+    Ophemert, Gelderland, Nederland<br/>
+    KvK: [nog in te vullen]<br/>
+    E-mail: <a href="mailto:privacy@mijnpakketradar.nl">privacy@mijnpakketradar.nl</a>
+  </address>
+
+  <h2>2. Wat we verzamelen en waarom</h2>
+
+  <h3>2.1 Wachtlijst-aanmeldingen (deze fase)</h3>
+  <p>Zolang de app nog niet live is, kun je je e-mailadres achterlaten om een bericht te krijgen bij lancering. We bewaren dan:</p>
+  <ul>
+    <li><strong>E-mailadres</strong> — om je één keer te berichten bij launch.</li>
+    <li><strong>Gehashte IP-adres</strong> — alleen om spam te voorkomen. We slaan je IP nooit als platte tekst op; we zetten het om in een versleutelde code (SHA-256 met salt).</li>
+    <li><strong>Land</strong> (op basis van je IP) — voor geografische statistiek op launch-interesse.</li>
+    <li><strong>User-agent en referer</strong> — om verdachte patronen te herkennen.</li>
+    <li><strong>Aanmelddatum en -tijd</strong>.</li>
+  </ul>
+  <p><strong>Rechtsgrond:</strong> jouw toestemming (AVG artikel 6 lid 1 sub a). Die geef je door op de knop te klikken. Je kunt die toestemming altijd intrekken via de uitschrijflink in onze mail of door te mailen.</p>
+
+  <h3>2.2 Tracking-gegevens (na launch)</h3>
+  <p>Zodra je de app gebruikt, verwerken we gegevens die direct nodig zijn om jouw pakketten te volgen:</p>
+  <ul>
+    <li><strong>Tracking-codes</strong> die je zelf invoert.</li>
+    <li><strong>Statusupdates van de carrier</strong> (PostNL, DHL, DPD, GLS) — zoals "onderweg naar sorteercentrum", inclusief tijdstip en locatie op sorteercentrum-niveau.</li>
+    <li><strong>4-cijferig postcodegebied</strong> (bijvoorbeeld "4196") — niet je volledige adres. Alleen voor geanonimiseerde statistiek per postcodegebied.</li>
+    <li><strong>E-mailadres</strong> (optioneel, alleen bij accountgebruik) — voor magic-link login en notificaties.</li>
+    <li><strong>Telegram gebruikers-ID</strong> (optioneel, alleen als je de bot gebruikt) — om je berichten te sturen.</li>
+  </ul>
+  <p><strong>Rechtsgrond:</strong> uitvoering van de overeenkomst (AVG artikel 6 lid 1 sub b) — je vraagt ons immers expliciet om deze pakketten te volgen.</p>
+
+  <h3>2.3 Wat we NIET verzamelen</h3>
+  <ul>
+    <li>Geen wachtwoorden (we gebruiken magic-link authenticatie).</li>
+    <li>Geen volledige adressen (alleen het 4-cijferig postcodegebied).</li>
+    <li>Geen betaalinformatie (de consumenten-app is gratis).</li>
+    <li>Geen tracking-pixels, advertentie-IDs of fingerprinting.</li>
+    <li>Geen Google Analytics, Facebook Pixel, of vergelijkbare derde partijen.</li>
+    <li>Geen koppelingen met je webshop-accounts of e-mail-inbox.</li>
+  </ul>
+
+  <h2>3. Hoe lang we gegevens bewaren</h2>
+  <table class="retention">
+    <thead>
+      <tr><th>Soort gegeven</th><th>Bewaartermijn</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Wachtlijst e-mailadres</td><td>Tot launch + 30 dagen, daarna verwijderd</td></tr>
+      <tr><td>Tracking-events van je pakketten</td><td>30 dagen na laatste status-update</td></tr>
+      <tr><td>Account (als je er een aanmaakt)</td><td>Zolang je het gebruikt; 12 maanden inactief = automatisch verwijderd</td></tr>
+      <tr><td>Geanonimiseerde statistiek (PC4-niveau, k≥50)</td><td>Onbeperkt — is geen persoonsgegeven meer</td></tr>
+      <tr><td>IP-hash (spam-preventie)</td><td>7 dagen</td></tr>
+    </tbody>
+  </table>
+
+  <h2>4. Het B2B data-product</h2>
+  <p>
+    PakketRadar verkoopt geanonimiseerde bezorgstatistieken per 4-cijferig postcodegebied
+    aan webshops, zoals: "hoe vaak levert PostNL in gebied 4196 de eerste keer
+    succesvol af". Dit zijn <strong>geen persoonsgegevens</strong> omdat:
+  </p>
+  <ul>
+    <li>We pas een datapunt vrijgeven als er minstens <strong>50 pakketten</strong> in die cel zitten (k-anonimiteit).</li>
+    <li>We extra statistische ruis toevoegen (differential privacy, ε=1.0).</li>
+    <li>We geen datum van individuele bezorgingen delen, alleen geaggregeerde maandcijfers.</li>
+  </ul>
+  <p>
+    Hierdoor is herleiding naar een individueel pakket of persoon onmogelijk. Deze aanpak
+    volgt de richtlijnen van de WP29 Opinion 05/2014 over anonimiseringstechnieken.
+  </p>
+
+  <h2>5. Met wie we delen</h2>
+  <p>We delen persoonsgegevens alleen met:</p>
+  <ul>
+    <li><strong>De carrier</strong> (PostNL, DHL, DPD, GLS) waar je tracking-code bij hoort — om de actuele status op te vragen. Zij zien je tracking-code, wij de rest.</li>
+    <li><strong>Onze hosting-partner Cloudflare</strong> (EU, gevestigd in Ierland) — voor website-hosting en database-opslag. Cloudflare verwerkt alleen op onze instructie en biedt AVG-conforme verwerkersovereenkomsten.</li>
+    <li><strong>Onze e-mailprovider</strong> [nader in te vullen] — voor het versturen van magic-link mails en launch-notificaties.</li>
+    <li><strong>Telegram</strong> (als je de bot gebruikt) — je Telegram-ID en de berichten die je verstuurt.</li>
+  </ul>
+  <p>
+    <strong>We verkopen nooit persoonsgegevens.</strong> We delen geen persoonsgegevens
+    met advertentienetwerken, data-brokers, of andere derden voor commerciële doeleinden.
+  </p>
+
+  <h2>6. Jouw rechten</h2>
+  <p>Onder de AVG heb je het recht om:</p>
+  <ul>
+    <li><strong>In te zien</strong> welke persoonsgegevens we van je hebben (artikel 15).</li>
+    <li><strong>Te corrigeren</strong> als iets niet klopt (artikel 16).</li>
+    <li><strong>Te laten verwijderen</strong> ("recht om vergeten te worden", artikel 17) — in de app doe je dit zelf met één klik; account en alle data worden binnen 72 uur gewist.</li>
+    <li><strong>Te exporteren</strong> in een machine-leesbaar formaat (JSON — artikel 20).</li>
+    <li><strong>Bezwaar te maken</strong> of de verwerking te beperken (artikelen 18 en 21).</li>
+    <li><strong>Een klacht in te dienen</strong> bij de <a href="https://autoriteitpersoonsgegevens.nl/" rel="noopener">Autoriteit Persoonsgegevens</a>.</li>
+  </ul>
+  <p>
+    Wil je iets uitoefenen? Mail naar <a href="mailto:privacy@mijnpakketradar.nl">privacy@mijnpakketradar.nl</a>.
+    We reageren binnen 30 dagen.
+  </p>
+
+  <h2>7. Beveiliging</h2>
+  <p>Concrete maatregelen:</p>
+  <ul>
+    <li>Alle verbindingen via HTTPS met TLS 1.3.</li>
+    <li>Geen wachtwoorden — authenticatie via tijdgebonden magic-links (15 minuten geldig).</li>
+    <li>IP-adressen worden direct bij ontvangst gehasht; we slaan geen platte IPs op.</li>
+    <li>Onze broncode is <a href="https://github.com/Craft-Code-Systems/PakketRadar" rel="noopener">openbaar op GitHub</a>, zodat iedereen kan controleren wat we echt doen.</li>
+  </ul>
+
+  <h2>8. Cookies</h2>
+  <p>
+    PakketRadar gebruikt <strong>geen tracking-cookies, analytics-cookies of advertentie-cookies</strong>.
+    Zie ons <a href="/cookies">cookiebeleid</a> voor details.
+  </p>
+
+  <h2>9. Wijzigingen</h2>
+  <p>
+    Als we dit beleid aanpassen, vermelden we dat bovenaan deze pagina met een nieuwe
+    versiedatum. Bij ingrijpende wijzigingen (bijvoorbeeld nieuwe ontvangers van gegevens)
+    mailen we je vooraf als je een account hebt.
+  </p>
+
+  <h2>10. Contact</h2>
+  <p>
+    Vragen over dit privacybeleid? Mail ons op
+    <a href="mailto:privacy@mijnpakketradar.nl">privacy@mijnpakketradar.nl</a>
+    of schrijf via het postadres van Craft Code Systems in Ophemert.
+  </p>
+
+  <p class="footer-note">
+    Versie 1.0 — 19 april 2026
+  </p>
+
+</main>
+
+<footer class="legal-footer">
+  <div class="legal-container">
+    <div>© 2026 Craft Code Systems · <a href="/">PakketRadar</a></div>
+    <div>
+      <a href="/privacy">Privacy</a> ·
+      <a href="/voorwaarden">Voorwaarden</a> ·
+      <a href="/cookies">Cookies</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
