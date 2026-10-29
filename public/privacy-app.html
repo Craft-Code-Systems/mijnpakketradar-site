@@ -36,7 +36,7 @@
 <main class="legal-container legal-content">
 
   <h1>Privacyverklaring Android-app</h1>
-  <p class="meta">Versie 1.2 · Laatst gewijzigd: 28 oktober 2026</p>
+  <p class="meta">Versie 1.3 · Laatst gewijzigd: 29 oktober 2026</p>
 
   <p class="lead">
     Deze verklaring gaat over de Android-app Pakketradar uit de Google Play Store. De app
@@ -69,6 +69,7 @@
     <li><strong>Track &amp; trace-codes</strong> die je toevoegt, met een eigen naam als je die opgeeft.</li>
     <li><strong>Je postcode</strong>: GLS en PostNL vragen die bij een code. De app onthoudt hem in je profiel, zodat je hem maar één keer hoeft in te vullen.</li>
     <li><strong>Je DHL-login</strong>, als je inlogt bij DHL: e-mailadres en wachtwoord. Die gaan alleen naar DHL, voor die ene inlogaanvraag. Het wachtwoord wordt nergens bewaard. DHL geeft een sessie terug (cookies), die de app bewaart zodat je ingelogd blijft.</li>
+    <li><strong>Je PostNL-login</strong>, als je je PostNL-account koppelt: e-mailadres en wachtwoord. De app bewaart ze versleuteld op je telefoon en logt daarmee ongeveer elke vier uur zelf in op de eigen inlogpagina van PostNL, om je pakketlijst op te halen. De pakketten daarop volgt de app daarna met hun code en postcode. Je e-mailadres en wachtwoord gaan alleen naar PostNL. Ontkoppelen wist ze.</li>
     <li><strong>Een veilige plek voor een DHL-pakket</strong>, als je DHL vraagt een pakket op een plek bij je huis te leggen: de plek die je beschrijft en het e-mailadres van je bestelling. Die gaan alleen naar DHL, voor dat ene verzoek, en worden niet bewaard.</li>
     <li><strong>Wat de vervoerder terugstuurt</strong>: status en verloop van je pakketten, verwachte bezorgtijd, afzender en afhaalpunt, en bij een DHL-account je naam, e-mailadres en adres.</li>
   </ul>
@@ -91,13 +92,15 @@
       <tr><td>GLS-code met je postcode</td><td>GLS (<code>apm.gls.nl</code>)</td></tr>
       <tr><td>PostNL-code met je postcode</td><td>PostNL (<code>jouw.postnl.nl</code>)</td></tr>
       <tr><td>DHL-code, en je DHL-login als je inlogt</td><td>DHL (<code>my.dhlecommerce.nl</code>, <code>api-gw.dhlparcel.nl</code>)</td></tr>
+      <tr><td>Je PostNL-login, en het ophalen van je pakketlijst, als je je PostNL-account koppelt</td><td>PostNL (<code>login.postnl.nl</code>, <code>jouw.postnl.nl</code>)</td></tr>
       <tr><td>De veilige plek en het e-mailadres van je bestelling, als je die doorgeeft</td><td>DHL (<code>api-gw.dhlparcel.nl</code>)</td></tr>
     </tbody>
   </table>
   <p>
     Voor wat de vervoerder met die gegevens doet, geldt het privacybeleid van die vervoerder.
-    Opent de app een pagina van een vervoerder, dan gebeurt dat in je browser. Alle verbindingen
-    zijn versleuteld (HTTPS).
+    Opent de app een pagina van een vervoerder, dan gebeurt dat in je browser; alleen de
+    inlogpagina van PostNL opent de app zelf, om met je gekoppelde account in te loggen. Alle
+    verbindingen zijn versleuteld (HTTPS).
   </p>
 
   <h2>4. Meldingen</h2>
@@ -113,7 +116,7 @@
 
   <h2>5. Waar je gegevens blijven</h2>
   <p>
-    Alleen op je telefoon. Codes, postcode, instellingen en de DHL-sessie worden versleuteld
+    Alleen op je telefoon. Codes, postcode, instellingen, de DHL-sessie en je PostNL-login worden versleuteld
     opgeslagen (AES-256, met een sleutel in de Android Keystore die de telefoon niet verlaat).
     Ze gaan niet mee in een back-up naar de cloud en niet over naar een ander toestel.
   </p>
@@ -126,6 +129,7 @@
     <tbody>
       <tr><td>Gevolgd pakket (code, postcode, naam)</td><td>Tot je stopt met volgen</td></tr>
       <tr><td>DHL-sessie, naam en e-mailadres</td><td>Tot je uitlogt bij DHL</td></tr>
+      <tr><td>PostNL-login (e-mailadres en wachtwoord) en de pakketten die de app daarmee ophaalde</td><td>Tot je je PostNL-account ontkoppelt (Vervoerders)</td></tr>
       <tr><td>Postcode in je profiel</td><td>Tot je hem wist onder Instellingen › Profiel</td></tr>
       <tr><td>Laatst geziene status per pakket (voor meldingen)</td><td>Zolang meldingen aan staan, en hooguit 30 dagen nadat een pakket niet meer voorkomt; meldingen uitzetten wist alles</td></tr>
       <tr><td>Uitkomst van de laatste controle (voor meldingen)</td><td>Zolang meldingen aan staan, en alleen de laatste; meldingen uitzetten wist hem</td></tr>
@@ -157,7 +161,7 @@
   </p>
 
   <p class="footer-note">
-    Versie 1.2 — 28 oktober 2026
+    Versie 1.3 — 29 oktober 2026
   </p>
 
 </main>
